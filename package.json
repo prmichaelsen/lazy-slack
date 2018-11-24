@@ -1,0 +1,50 @@
+{
+	"name": "lazy-slack",
+	"version": "0.0.0",
+	"description": "Download and upload slack emojis.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"go": "npm run build && npm run start",
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"test": "jest",
+		"lint": "tslint -p tsconfig.json",
+		"prepare": "npm run build",
+		"prepublishOnly": "npm test && npm run lint",
+		"preversion": "npm run lint",
+		"postversion": "git push && git push --tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/prmichaelsen/lazy-slack.git"
+	},
+	"keywords": [
+		"slack",
+		"emoji",
+		"download",
+		"upload"
+	],
+	"author": "Patrick AR Michaelsen",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/prmichaelsen/lazy-slack/issues"
+	},
+	"homepage": "https://github.com/prmichaelsen/lazy-slack#readme",
+	"devDependencies": {
+		"@types/dotenv": "^6.1.0",
+		"@types/jest": "^23.3.9",
+		"@types/moment": "^2.13.0",
+		"@types/node": "^10.12.10",
+		"@types/request": "^2.48.1",
+		"jest": "^23.6.0",
+		"ts-jest": "^23.10.5",
+		"tslint": "^5.11.0",
+		"typescript": "^3.1.6"
+	},
+	"dependencies": {
+		"dotenv": "^7.0.0",
+		"moment": "^2.22.2",
+		"request": "^2.88.0"
+	}
+}
